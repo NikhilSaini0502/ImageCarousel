@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import "../index.css"
 
 let images = [
   {
@@ -47,11 +48,13 @@ const Carasouel = () => {
 
   return (
     <div>
-      <img src={images[img].imageSrc} height="250px" width="420px" />
-      <h3>{images[img].imageTitle}</h3>
-
-      <button onClick={SetPreImg}>Prev</button>
-      <button onClick={SetNextImage}>Next</button>
+      <img className="w-full h-80" src={images[img].imageSrc} />
+      <h3 className="text-center font-extrabold font-mono">{images[img].imageTitle}</h3>
+      <div className="text-center">
+      <button className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md m-1" onClick={SetPreImg}>Prev</button>
+      <button className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300  rounded-md m-1" onClick={SetNextImage}>Next</button>
+      </div>
+      
     </div>
   );
 };
